@@ -1,0 +1,32 @@
+{
+  "name": "scraper-creator",
+  "version": "1.0.0",
+  "description": "AI-powered scraper creator with browser recording and MCP integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "scraper-creator": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && cp -r src/inject dist/inject",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["scraper", "mcp", "playwright", "browser-automation"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "nunjucks": "^3.2.4",
+    "playwright": "^1.58.2",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "@types/nunjucks": "^3.2.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
