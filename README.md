@@ -55,7 +55,7 @@ npx playwright install chromium
 npx playwright install-deps chromium
 
 # 3. Install Python dependencies (for running generated scrapers)
-pip install requests beautifulsoup4 lxml playwright
+pip install -r requirements.txt
 python -m playwright install chromium
 
 # 4. Build the TypeScript source
@@ -234,7 +234,7 @@ npx playwright install-deps chromium
 
 ### Python scraper fails to import modules
 ```bash
-pip install requests beautifulsoup4 lxml playwright
+pip install -r requirements.txt
 python -m playwright install chromium
 ```
 

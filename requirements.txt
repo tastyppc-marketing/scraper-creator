@@ -1,0 +1,11 @@
+# Python dependencies for generated scrapers
+# Install with: pip install -r requirements.txt
+
+# Static scrapers (requests + BeautifulSoup)
+requests>=2.28.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Dynamic scrapers (Playwright browser automation)
+# After installing, also run: python -m playwright install chromium
+playwright>=1.40.0

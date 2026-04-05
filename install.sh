@@ -141,15 +141,14 @@ fi
 print_step 5 "Installing Python dependencies for generated scrapers..."
 
 if [ -n "$PIP_CMD" ]; then
-    $PIP_CMD install requests beautifulsoup4 lxml 2>/dev/null && \
-        print_success "Python packages installed (requests, beautifulsoup4, lxml)" || \
+    $PIP_CMD install -r requirements.txt 2>/dev/null && \
+        print_success "Python packages installed from requirements.txt" || \
         print_warn "Some Python packages failed to install — scrapers using them may not work"
 
-    # Install Python Playwright (for dynamic scrapers)
-    $PIP_CMD install playwright 2>/dev/null && \
-        $PYTHON_CMD -m playwright install chromium 2>/dev/null && \
-        print_success "Python Playwright installed" || \
-        print_warn "Python Playwright install failed — dynamic scrapers may not work"
+    # Install Playwright browser for Python (for dynamic scrapers)
+    $PYTHON_CMD -m playwright install chromium 2>/dev/null && \
+        print_success "Python Playwright browser installed" || \
+        print_warn "Python Playwright browser install failed — dynamic scrapers may not work"
 else
     print_warn "pip not found — skipping Python dependencies"
     echo "  Install manually: pip install requests beautifulsoup4 lxml playwright"
